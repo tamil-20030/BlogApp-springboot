@@ -8,12 +8,14 @@ import org.springframework.lang.Nullable;
 
 
 @Entity(name = "users")
-@NoArgsConstructor
+
 @Getter
 @Setter
-
-@RequiredArgsConstructor
+@Builder
+//@RequiredArgsConstructor
+@AllArgsConstructor
 @ToString
+@NoArgsConstructor(access = AccessLevel.PROTECTED)
 public class UserEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
@@ -35,4 +37,6 @@ public class UserEntity {
     @Column(nullable=true)
     @Nullable
     private String image;
+
+
 }
