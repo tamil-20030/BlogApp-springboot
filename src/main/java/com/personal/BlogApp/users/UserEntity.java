@@ -12,7 +12,7 @@ import org.springframework.lang.Nullable;
 @Getter
 @Setter
 @Builder
-//@RequiredArgsConstructor
+@RequiredArgsConstructor
 @AllArgsConstructor
 @ToString
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
@@ -25,6 +25,10 @@ public class UserEntity {
     @Column(name="name",nullable=false)
     @NonNull
     private String userName;
+
+    @Column(name="password",nullable=false)
+    @NonNull
+    private String password;
 
     @Column(nullable=false)
     @NonNull
